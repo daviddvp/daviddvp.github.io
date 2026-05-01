@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Base styles === */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    min-height: 100vh;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-strong rounded;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+
+  /* Selección de texto */
+  ::selection {
+    @apply bg-accent-subtle text-accent;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-text-primary;
+  }
+
+  a {
+    @apply text-accent transition-colors duration-150;
+  }
+
+  code, kbd, pre {
+    @apply font-mono;
+  }
+
+  pre {
+    @apply bg-bg-subtle border border-border rounded p-4 text-sm overflow-x-auto;
+  }
+
+  code:not(pre code) {
+    @apply bg-bg-subtle text-accent px-1.5 py-0.5 rounded text-sm;
+  }
+}
+
+/* === Componentes de utilidad === */
+@layer components {
+  /* Patrón de grid sutil para fondos */
+  .bg-grid {
+    background-image: theme('backgroundImage.grid-pattern');
+    background-size: theme('backgroundSize.grid');
+  }
+
+  /* Badge de estado tipo terminal */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full bg-accent animate-pulse-dot;
+  }
+
+  /* Línea separadora con gradiente */
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+
+  /* Tag técnico */
+  .tech-tag {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono
+           bg-bg-subtle text-text-secondary border border-border
+           hover:border-border-strong hover:text-text-primary transition-colors duration-150;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-bg-card border border-border rounded-md p-5
+           shadow-card hover:shadow-card-hover hover:border-border-strong
+           transition-all duration-200;
+  }
+
+  /* Botón primario */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded
+           bg-accent text-bg-primary font-medium text-sm
+           hover:bg-opacity-90 transition-all duration-150
+           focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2
+           focus-visible:ring-offset-bg-primary;
+  }
+
+  /* Botón secundario / outline */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded
+           border border-border text-text-secondary text-sm font-medium
+           hover:border-border-strong hover:text-text-primary hover:bg-bg-elevated
+           transition-all duration-150;
+  }
+
+  /* Input de formulario */
+  .form-input {
+    @apply w-full px-3 py-2.5 rounded bg-bg-subtle border border-border
+           text-text-primary text-sm placeholder:text-text-muted
+           focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent
+           transition-colors duration-150;
+  }
+
+  /* Label de formulario */
+  .form-label {
+    @apply block text-sm font-medium text-text-secondary mb-1.5;
+  }
+}
+
+/* === Animaciones de entrada para páginas === */
+@layer utilities {
+  .page-enter {
+    animation: fadeIn 0.35s ease-out both;
+  }
+
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.10s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.20s; }
+  .stagger-5 { animation-delay: 0.25s; }
+}
