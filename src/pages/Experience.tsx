@@ -26,7 +26,7 @@ export function ExperiencePage() {
         <SectionTitle
           label="sobre mí"
           title="Perfil profesional"
-          subtitle="Dos años trabajando en entornos de producción reales. He pasado de administrar servidores bare-metal a gestionar infraestructura cloud y plataformas de contenedores. Me interesa la parte donde las cosas se rompen y hay que entender por qué."
+          subtitle=" años trabajando en entornos de producción reales. He pasado de administrar servidores bare-metal a gestionar infraestructura cloud y plataformas de contenedores. Me interesa la parte donde las cosas se rompen y hay que entender por qué."
         />
       </section>
 

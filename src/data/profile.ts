@@ -2,7 +2,7 @@ import type { Profile } from '@/types';
 
 // === Edita este archivo para actualizar tu información personal ===
 export const profile: Profile = {
-  name: 'Alejandro Ruiz',
+  name: 'David Del Valle Puado',
   role: 'DevOps Engineer',
   tagline: 'Infraestructura que no da sorpresas a las 3 AM.',
   bio: `Trabajo en el espacio entre desarrollo y operaciones: automatizo lo repetitivo,
@@ -39,8 +39,8 @@ no son opcionales, y que el "funciona en mi máquina" deja de ser gracioso muy p
     },
   ],
   contact: {
-    email: 'alex.ruiz@example.com',
-    github: 'https://github.com/alexruiz-dev',
-    linkedin: 'https://linkedin.com/in/alexruiz-devops',
+    email: 'delvallepuadodavid@gmail.com',
+    github: 'https://github.com/daviddvp',
+    linkedin: 'https://linkedin.com/inj/daviddvp',
   },
 };

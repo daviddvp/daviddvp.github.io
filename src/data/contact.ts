@@ -1,13 +1,13 @@
 // === Datos de contacto ===
 export const contactData = {
-  email: 'alex.ruiz@example.com',
+  email: 'delvallepuadodavid@gmail.com',
   github: {
-    url: 'https://github.com/alexruiz-dev',
-    username: 'alexruiz-dev',
+    url: 'https://github.com/daviddvp',
+    username: 'daviddvip',
   },
   linkedin: {
-    url: 'https://linkedin.com/in/alexruiz-devops',
-    username: 'alexruiz-devops',
+    url: 'https://www.linkedin.com/in/daviddvp/',
+    username: 'David Del Valle Puado',
   },
   message: `¿Tienes un proyecto de infraestructura, un reto de automatización o simplemente quieres hablar de Kubernetes?
 Estoy abierto a conversaciones sobre nuevos proyectos, colaboraciones o posiciones que encajen.
