@@ -1,0 +1,117 @@
+/* ═══════════════════════════════════════════════════
+   G-SHOCK ZONE — Global Styles
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* Colors */
+  --bg-primary:    #0a0a0b;
+  --bg-secondary:  #111114;
+  --bg-card:       #161619;
+  --bg-card-hover: #1c1c21;
+  --accent-red:    #c8102e;
+  --accent-red-dim:#8a0c1f;
+  --accent-yellow: #f5c518;
+  --accent-green:  #4d7c3f;
+  --text-primary:  #f0eeeb;
+  --text-secondary:#8a8a92;
+  --text-muted:    #55555d;
+  --border:        #2a2a30;
+  --border-bright: #3a3a42;
+
+  /* Typography */
+  --font-display:  'Bebas Neue', sans-serif;
+  --font-condensed:'Barlow Condensed', sans-serif;
+  --font-body:     'Barlow', sans-serif;
+  --font-mono:     'Space Mono', monospace;
+
+  /* Spacing */
+  --section-gap:   6rem;
+  --card-radius:   4px;
+
+  /* Transitions */
+  --transition:    0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-red); border-radius: 3px; }
+
+/* ─── Links ──────────────────────────────────────── */
+a { color: inherit; text-decoration: none; }
+
+/* ─── Images ─────────────────────────────────────── */
+img { max-width: 100%; display: block; }
+
+/* ─── Selection ──────────────────────────────────── */
+::selection { background: var(--accent-red); color: #fff; }
+
+/* ─── Container ──────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ─── Section spacing ────────────────────────────── */
+.section { padding: var(--section-gap) 0; }
+
+/* ─── Utility classes ────────────────────────────── */
+.text-red    { color: var(--accent-red); }
+.text-yellow { color: var(--accent-yellow); }
+.text-muted  { color: var(--text-secondary); }
+.font-mono   { font-family: var(--font-mono); }
+.font-display{ font-family: var(--font-display); }
+
+/* ─── Grid helpers ───────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  :root { --section-gap: 4rem; }
+}
+
+/* ─── Page transition ────────────────────────────── */
+.page-enter {
+  animation: pageIn 0.35s ease forwards;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Red stripe accent ──────────────────────────── */
+.stripe-red {
+  display: inline-block;
+  height: 3px;
+  width: 40px;
+  background: var(--accent-red);
+  margin-bottom: 1rem;
+}
